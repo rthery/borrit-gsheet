@@ -1,0 +1,19 @@
+{
+    "name": "Borrit.Editor.GSheet",
+    "rootNamespace": "BorritEditor",
+    "references": [
+        "GUID:49818357e697641afb75d2f8acaf1861",
+	"GUID:2c1f5394cfc32c542b0d63ee6618022f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
