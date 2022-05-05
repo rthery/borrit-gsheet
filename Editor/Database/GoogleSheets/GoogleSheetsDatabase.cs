@@ -214,6 +214,27 @@ namespace BorritEditor.Database.GoogleSheets
 			return DatabaseRow.Empty;
 		}
 
+		public IReadOnlyList<DatabaseRow> GetBorrowedAssetsData()
+		{
+			if (IsInitialized == false)
+				return Array.Empty<DatabaseRow>();
+			
+			List<DatabaseRow> rows = new List<DatabaseRow>(_data.Count);
+			foreach (IList<object> row in _data)
+			{
+				bool rowIsWellFormatted = row != null && row.Count == DatabaseColumn.Count;
+				if (rowIsWellFormatted)
+				{
+					string borrowedAssetGuid = row[DatabaseColumn.BorrowedAssetIndex] as string;
+					string borrowerName = row[DatabaseColumn.BorrowerNameIndex] as string;
+					long.TryParse(row[DatabaseColumn.BorrowBinaryUtcDateTimeIndex] as string, out long borrowBinaryUtcDateTime);
+					rows.Add(new DatabaseRow(borrowedAssetGuid, borrowerName, borrowBinaryUtcDateTime));
+				}
+			}
+
+			return rows;
+		}
+
 		public bool IsAssetBorrowed(string guid)
 		{
 			string spreadsheetId = BorritSettings.Instance.Get<string>(GoogleSheetsSettings.Keys.SpreadsheetId);

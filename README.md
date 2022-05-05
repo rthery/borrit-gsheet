@@ -5,7 +5,7 @@ This package allows you to use Google Sheet as a database for [Borrit](https://g
 ## Installation
 Use the package manager in Unity to install this package from its git url `https://github.com/rthery/borrit-gsheet.git`  
 
-Because Unity packages don't support git dependency, you will need to install [Borrit](`https://github.com/rthery/borrit`) 2.0.0+ package manually.
+Because Unity packages don't support git dependency, you will need to install [Borrit](`https://github.com/rthery/borrit`) `2.1.0` (or later) package manually.
 
 ### Google Sheets (Google API)
 This method can be interesting if you want all your users to be authenticated with their Google account.
